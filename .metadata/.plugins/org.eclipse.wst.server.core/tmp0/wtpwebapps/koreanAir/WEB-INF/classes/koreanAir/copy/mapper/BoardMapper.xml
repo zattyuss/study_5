@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="koreanAir.copy.mapper.BoardMapper">
+	<sql id="searchCondition">
+			<where>
+			<trim prefixOverrides="or">       
+				<foreach collection="typeCollection" item="tp">
+					<trim prefix="or">
+						<choose>
+							<when test="tp=='T'.toString()">
+								title like concat('%',#{keyword},'%')
+							</when>
+							<when test="tp=='C'.toString()">
+								content like concat('%',#{keyword},'%')
+							</when>
+							<when test="tp=='W'.toString()">
+								writer like concat('%',#{keyword},'%')
+							</when>
+						</choose>
+					</trim>
+				</foreach>
+			</trim>
+		</where>
+	</sql>
+	
+	<select id="getList" resultType="koreanAir.copy.model.Board">
+		select * from korean_air_board_tbl
+		<include refid="searchCondition"></include>
+		limit #{pageStart}, #{perPageNum}
+	</select>
+	<select id="get" resultType="koreanAir.copy.model.Board">
+		select * from korean_air_board_tbl where bno = #{bno}
+	</select>
+	<insert id="insert">     
+		<selectKey keyProperty="bno" resultType="java.lang.Long" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into korean_air_board_tbl(title,content,writer) 
+		values(#{title}, #{content}, #{writer});
+	</insert>
+	<update id="update">
+		update korean_air_board_tbl set
+		title = #{title},
+		content = #{content},
+		updateDate = now()
+		where bno = #{bno}
+	</update>
+	<delete id="delete">
+		delete from korean_air_board_tbl where bno = #{bno}
+	</delete>
+	<select id="totalCount" resultType="java.lang.Integer">
+		select count(bno) from korean_air_board_tbl
+		<include refid="searchCondition"></include>
+	</select>
+</mapper>

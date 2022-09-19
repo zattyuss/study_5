@@ -1,0 +1,30 @@
+package koreanAir.copy.mapper;
+
+import org.junit.Ignore;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import koreanAir.copy.config.AppTest;
+import koreanAir.copy.model.ReplyVO;
+
+public class ReplyMapperTest extends AppTest{
+
+	@Autowired
+	private ReplyMapper mapper;
+	
+	@Test
+	@Ignore
+	public void test() {
+		System.out.println((mapper.getListAll()));
+	}
+
+	@Test
+	public void insertTest() {
+		ReplyVO vo = new ReplyVO();
+		vo.setBno(1L);
+		vo.setReply("스레기 새기");
+		vo.setReplyer("헤헤");
+		mapper.insert(vo);
+	}
+	
+}

@@ -1,0 +1,5 @@
+package koreanAir.copy.mapper;
+
+public class AuthVO {
+
+}

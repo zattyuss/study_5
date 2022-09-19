@@ -1,0 +1,16 @@
+package koreanAir.copy.mapper;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import koreanAir.copy.config.AppTest;
+
+public class ReplyMapperTest extends AppTest{
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="board_ex"/>
+<aop-project name="koreanAir"/>
+<aop-project name="board_ex07"/>
+</aop-reference-model>

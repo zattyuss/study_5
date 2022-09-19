@@ -1,0 +1,5 @@
+package koreanAir.copy.model;
+
+public class ReplyVO {
+
+}

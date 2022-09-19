@@ -1,0 +1,17 @@
+package koreanAir.copy.controller;
+
+import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class CommonController {
+
+	@GetMapping("/accessError")
+	public String accessDenied(Authentication auth, Model model) {
+		System.out.println("access denied" + auth);
+		model.addAttribute("msg", "Access Denied");
+		return "/accessError";
+	}
+}

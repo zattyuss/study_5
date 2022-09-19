@@ -1,0 +1,9 @@
+package koreanAir.copy.mapper;
+
+import java.util.List;
+
+import koreanAir.copy.model.ReplyVO;
+
+public interface ReplyMapper {
+	List<ReplyVO> getListAll();
+}

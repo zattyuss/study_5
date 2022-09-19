@@ -1,0 +1,45 @@
+package koreanAir.copy.security;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import javax.sql.DataSource;
+
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+import koreanAir.copy.AppTest;
+
+public class MemberTest extends AppTest{
+
+	@Autowired
+	DataSource dataSource;
+	
+	@Autowired
+	PasswordEncoder passwordEncoder;
+	
+	@Test
+	public void memberInsertTest() {
+		
+		String sql = "insert into member_tbl(userId,userPw,userName) valuse(?,?,?)";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			
+		} catch (SQLException e) {
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+}

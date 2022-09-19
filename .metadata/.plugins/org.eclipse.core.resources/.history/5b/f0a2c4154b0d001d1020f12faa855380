@@ -1,0 +1,5 @@
+package koreanAir.copy.controller;
+
+public class CustomLoginSuccessHandler {
+
+}

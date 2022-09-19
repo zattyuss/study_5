@@ -1,0 +1,11 @@
+package koreanAir.copy.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.annotation.RequestScope;
+
+@RestController
+@RequestMapping("/replies")
+public class ReplyController {
+
+}

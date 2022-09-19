@@ -1,0 +1,7 @@
+package koreanAir.copy.security;
+
+import koreanAir.copy.AppTest;
+
+public class MemberTest extends AppTest{
+
+}

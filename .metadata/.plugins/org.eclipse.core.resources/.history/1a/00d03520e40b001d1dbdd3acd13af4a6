@@ -1,0 +1,47 @@
+package koreanAir.copy.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import koreanAir.copy.mapper.BoardMapper;
+import koreanAir.copy.mapper.ReplyMapper;
+import koreanAir.copy.model.Criteria;
+import koreanAir.copy.model.ReplyVO;
+import lombok.Setter;
+
+public class ReplyServiceImpl implements ReplyService {
+
+	@Setter(onMethod_ = @Autowired)
+	private ReplyMapper mapper;
+	
+	@Autowired
+	private BoardMapper boardMapper;
+	
+	
+	@Override
+	public List<ReplyVO> getListWithPaging(Criteria criteria, Long bno) {
+		return mapper.getListWirhPaging(criteria, bno);
+	}
+
+	@Override
+	public ReplyVO get(Long rno) {
+		return mapper.read(rno);
+	}
+
+	@Override
+	public int register(ReplyVO vo) {
+		return 0;
+	}
+
+	@Override
+	public int remove(Long bno) {
+		return 0;
+	}
+
+	@Override
+	public int modify(ReplyVO vo) {
+		return 0;
+	}
+
+}

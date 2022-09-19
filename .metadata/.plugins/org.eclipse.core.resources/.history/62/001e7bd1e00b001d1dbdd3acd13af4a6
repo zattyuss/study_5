@@ -1,0 +1,20 @@
+package koreanAir.copy.mapper;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
+import koreanAir.copy.model.Criteria;
+import koreanAir.copy.model.ReplyVO;
+
+public interface ReplyMapper {
+	List<ReplyVO> getListAll();
+	List<ReplyVO> getListWirhPaging(
+			@Param("cri") Criteria cri,
+			@param("bno") Long bno
+	);
+	int insert(ReplyVO vo);
+	int delete(Long bno);
+	int update(ReplyVO vo);
+	ReplyVO read(Long bno);
+}

@@ -1,0 +1,9 @@
+package koreanAir.copy.service;
+
+import koreanAir.copy.model.ReplyVO;
+
+public interface ReplyService {
+	int register(ReplyVO vo);
+	int remove(Long bno);
+	int modify(ReplyVO vo)
+}

@@ -1,0 +1,7 @@
+package koreanAir.copy.service;
+
+import koreanAir.copy.model.ReplyVO;
+
+public interface ReplyService {
+	public int register(ReplyVO vo);
+}

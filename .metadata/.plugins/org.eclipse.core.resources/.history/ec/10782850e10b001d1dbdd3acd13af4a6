@@ -1,0 +1,51 @@
+package koreanAir.copy.mapper;
+
+import java.util.List;
+
+import org.junit.Ignore;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import koreanAir.copy.config.AppTest;
+import koreanAir.copy.model.Criteria;
+import koreanAir.copy.model.ReplyVO;
+
+public class ReplyMapperTest extends AppTest{
+
+	@Autowired
+	private ReplyMapper mapper;
+	
+	@Test
+	@Ignore
+	public void test() {
+		System.out.println((mapper.getListAll()));
+	}
+
+	@Test
+	@Ignore
+	public void insertTest() {
+		ReplyVO vo = new ReplyVO();
+		vo.setBno(1L);
+		vo.setReply("스레기 새기");
+		vo.setReplyer("헤헤");
+		mapper.insert(vo);
+	}
+	
+	@Test
+	@Ignore
+	public void readTest() {
+		System.out.println(mapper.read(1L));
+	}
+	
+	@Test
+	public void deleteTest() {
+		mapper.delete(1L);
+	}
+	
+	@Test
+	public void getListWithPagingTest() {
+		List<ReplyVO> listWithPaging = mapper.getListWirhPaging(new Criteria(), 1L);
+		System.out.println(listWithPaging);
+	}
+	
+}
